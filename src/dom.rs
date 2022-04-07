@@ -7,18 +7,18 @@ pub struct Node {
 }
 
 #[derive(Debug, PartialEq)]
-enum NodeType {
+pub enum NodeType {
   Text(String),
   Element(ElementData),
 }
 
 #[derive(Debug, PartialEq)]
-struct ElementData {
+pub struct ElementData {
   tag_name: String,
   attributes: AttrMap,
 }
 
-type AttrMap = HashMap<String, String>;
+pub type AttrMap = HashMap<String, String>;
 
 fn text(data: String) -> Node {
   Node { children: Vec::new(), node_type: NodeType::Text(data) }
